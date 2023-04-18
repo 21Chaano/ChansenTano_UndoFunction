@@ -1,0 +1,61 @@
+# 1: Function to print out what is at each location with each move
+# 2: Function to undo a move
+
+class Board:
+    # Not used as an object, the functions are just used. The
+    # dictionary below is the state of the game at any point.
+    origin = ()
+    a = {           1:(), 2:(), 3:()      }
+    b = { 0:origin, 1:(), 2:(), 3:(), 4:()}
+    c = { 0:origin, 1:(), 2:(), 3:(), 4:()}
+    d = { 0:origin, 1:(), 2:(), 3:(), 4:()}
+    e = { 0:origin, 1:(), 2:(), 3:(), 4:()}
+    f = {           1:(), 2:(), 3:()      } 
+    def __init__(self):
+        if not self.b[0]==() :
+            self.origin = self.b[0]  
+            self.c[0]   = self.b[0] 
+            self.d[0]   = self.b[0] 
+            self.e[0]   = self.b[0] 
+        if not self.c[0]==():
+            self.origin = self.c[0]
+            self.b[0]   = self.b[0] 
+            self.d[0]   = self.b[0] 
+            self.e[0]   = self.b[0]
+        if not self.d[0]==() :
+            self.origin = self.d[0]
+            self.c[0]   = self.b[0] 
+            self.b[0]   = self.b[0] 
+            self.e[0]   = self.b[0]
+        if not self.e[0]==() :
+            self.origin = self.e[0]
+            self.c[0]   = self.b[0] 
+            self.d[0]   = self.b[0] 
+            self.b[0]   = self.b[0] 
+
+        self.boardPositions = {
+            'b0': self.b[0],'a1': self.a[1],'a2': self.a[2],'a3': self.a[3],
+            'b1': self.b[1],'b2': self.b[2],'b3': self.b[3],'b4': self.b[4],
+            'c1': self.c[1],'c2': self.c[2],'c3': self.c[3],'c4': self.c[4],
+            'd1': self.d[1],'d2': self.d[2],'d3': self.d[3],'d4': self.d[4],
+            'e1': self.e[1],'e2': self.e[2],'e3': self.e[3],'e4': self.e[4],
+            'f1': self.f[1],'f2': self.f[2],'f3': self.f[3]
+            }
+    
+    def getPosition():
+        xPosition = input("Enter x-coordinate (a - f): ")
+        yPosition = input("Enter y-coordinate (0 - 4): ")
+        currentPosition = (xPosition, yPosition)
+        print(f'Current position: {currentPosition}')
+        return currentPosition
+    
+    def makeMove( boardPositions, move, i ):
+        if (i != 1) and (i != -1):
+            print('Error: third parameter must be +/- 1')
+            return
+        if i == 1:
+            # code for making a move
+            return
+        elif i == -1:
+            
+            return
