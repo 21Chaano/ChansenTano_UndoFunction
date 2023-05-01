@@ -59,3 +59,67 @@ class Board:
         elif i == -1:
             
             return
+
+    def undoCapture( key2, key1 ):
+        enumerate(Board.boardPositions, start=0)
+        total = len(Board.boardPositions)
+        # Validate movement
+        count = 0
+        for key in Board.boardPositions :
+            if key == key1 or key == key2 :
+                break
+            count += 1
+            if count == total :
+                print('Provided keys do not match any space on the board')
+                return
+
+        if key2 - key1 < 0 :
+            print('Please use compatable coordinates')
+            return
+        if key2 + key1 > total :
+            print('Please use compatable coordinates')
+            return
+
+        # Horizontal capture
+        if key2 == key1 - 2 :
+            tempKey = key1 - 1
+            for key in Board.boardPositions :
+                if tempKey == key :
+                    key = 'G' # place a goat where it was captured
+                    key1 = 'T' # Move the tiger back to it's previous space
+                    key2 = 0 # empty the space
+                    break
+                continue
+            return
+        if key2 == key1 + 2 :
+            tempKey = key1 + 1
+            for key in Board.boardPositions :
+                if tempKey == key :
+                    key = 'G'
+                    key1 = 'T'
+                    key2 = 0
+                    break
+                continue
+            return
+        
+        # Vertical capture
+        if key2 == key1 + 8 :
+            tempKey = key1 + 4
+            for key in Board.boardPositions :
+                if tempKey == key :
+                    key = 'G'
+                    key1 = 'T'
+                    key2 = 0
+                    break
+                continue
+            return
+        if key2 == key1 - 8 :
+            tempKey = key1 - 4
+            for key in Board.boardPositions :
+                if tempKey == key :
+                    key = 'G'
+                    key1 = 'T'
+                    key2 = 0
+                    break
+                continue
+            return
