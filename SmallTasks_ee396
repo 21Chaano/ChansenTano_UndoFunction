@@ -85,9 +85,9 @@ class Board:
             tempKey = key1 - 1
             for key in Board.boardPositions :
                 if tempKey == key :
-                    key = 'G' # place a goat where it was captured
-                    key1 = 'T' # Move the tiger back to it's previous space
-                    key2 = 0 # empty the space
+                    Board.boardPositions[key]  = 'G' # place a goat where it was captured
+                    Board.boardPositions[key1] = 'T' # Move the tiger back to it's previous space
+                    Board.boardPositions[key2] =  0 # empty the space
                     break
                 continue
             return
@@ -95,9 +95,9 @@ class Board:
             tempKey = key1 + 1
             for key in Board.boardPositions :
                 if tempKey == key :
-                    key = 'G'
-                    key1 = 'T'
-                    key2 = 0
+                    Board.boardPositions[key]  = 'G'
+                    Board.boardPositions[key1] = 'T'
+                    Board.boardPositions[key2] =  0
                     break
                 continue
             return
@@ -107,9 +107,10 @@ class Board:
             tempKey = key1 + 4
             for key in Board.boardPositions :
                 if tempKey == key :
-                    key = 'G'
-                    key1 = 'T'
-                    key2 = 0
+                    Board.boardPositions[key]  = 'G'
+                    Board.boardPositions[key1] = 'T'
+                    Board.boardPositions[key2] =  0
+                    break
                     break
                 continue
             return
@@ -117,9 +118,9 @@ class Board:
             tempKey = key1 - 4
             for key in Board.boardPositions :
                 if tempKey == key :
-                    key = 'G'
-                    key1 = 'T'
-                    key2 = 0
+                    Board.boardPositions[key]  = 'G'
+                    Board.boardPositions[key1] = 'T'
+                    Board.boardPositions[key2] =  0
                     break
                 continue
             return
