@@ -1,5 +1,5 @@
 # 1: Function to print out what is at each location with each move
-# 2: Function to undo a move
+# 2: Function to undo a capture
 
 class Board:
     # Not used as an object, the functions are just used. The
@@ -49,16 +49,6 @@ class Board:
         print(f'Current position: {currentPosition}')
         return currentPosition
     
-    def makeMove( boardPositions, move, i ):
-        if (i != 1) and (i != -1):
-            print('Error: third parameter must be +/- 1')
-            return
-        if i == 1:
-            # code for making a move
-            return
-        elif i == -1:
-            
-            return
 
     def undoCapture( key2, key1 ):
         enumerate(Board.boardPositions, start=0)
